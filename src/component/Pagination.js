@@ -22,7 +22,6 @@ function PaginationComponent() {
 
   const handlePageClick = (data) => {
     dispatch(getMovies(data.selected + 1));
-    console.log(data.selected);
   };
 
   return (
@@ -35,7 +34,7 @@ function PaginationComponent() {
         marginPagesDisplayed={2}
         pageCount={pageCount}
         previousLabel="< previous"
-        containerClassName={"pagination justify-content-center pagination-sm "}
+        containerClassName={"pagination justify-content-center pagination-sm"}
         pageClassName={"page-item"}
         pageLinkClassName={"page-link"}
         nextClassName={"page-item"}
