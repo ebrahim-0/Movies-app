@@ -1,6 +1,6 @@
 import ReactPaginate from "react-paginate";
 import { ApiKey, getMovies } from "../rtx/Slices/MoviesSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./Pagination.css";
 import axios from "axios";
 import { useState } from "react";
@@ -35,7 +35,7 @@ function PaginationComponent() {
         marginPagesDisplayed={2}
         pageCount={pageCount}
         previousLabel="< previous"
-        containerClassName={"pagination justify-content-center"}
+        containerClassName={"pagination justify-content-center pagination-sm "}
         pageClassName={"page-item"}
         pageLinkClassName={"page-link"}
         nextClassName={"page-item"}
