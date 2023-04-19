@@ -33,7 +33,10 @@ function CardMove() {
                     <p>Release Date: {movie.release_date}</p>
                     <p>Vote Count: {movie.vote_count}</p>
                     <p>Rating: {movie.vote_average}</p>
-                    <Button variant="danger" href={`/movies/${movie.id}`}>
+                    <Button
+                      variant="danger"
+                      onClick={() => navigate(`/movies/${movie.id}`)}
+                    >
                       View Details
                     </Button>
                   </div>
