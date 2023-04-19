@@ -1,0 +1,10 @@
+.page-link {
+  border-color: rgb(220, 53, 69) !important;
+  color: rgb(220, 53, 69) !important;
+}
+
+.activePage > .page-link,
+.page-link.activePage {
+  background-color: rgb(220, 53, 69) !important;
+  color: white !important;
+}
