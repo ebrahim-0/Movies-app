@@ -20,11 +20,7 @@ function CardMove() {
       {movies.length > 1 ? (
         movies.map((movie) => {
           return (
-            <Col
-              className="mt-3"
-              key={movie.id}
-              onClick={() => navigate(`/movies/${movie.id}`)}
-            >
+            <Col className="mt-3" key={movie.id}>
               <div className="card" style={{ margin: "20px" }}>
                 <img
                   style={{ height: "350px", padding: "5px" }}
@@ -37,6 +33,9 @@ function CardMove() {
                     <p>Release Date: {movie.release_date}</p>
                     <p>Vote Count: {movie.vote_count}</p>
                     <p>Rating: {movie.vote_average}</p>
+                    <Button variant="danger" href={`/movies/${movie.id}`}>
+                      View Details
+                    </Button>
                   </div>
                 </div>
               </div>

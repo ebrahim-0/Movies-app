@@ -41,7 +41,7 @@ function NavBar() {
             <Form.Control
               type="search"
               placeholder="Search"
-              className="m-auto me-2 mt-2  w-100"
+              className="m-auto me-2 mt-2 w-50"
               aria-label="Search"
               ref={value}
               onChange={handleSearch}
