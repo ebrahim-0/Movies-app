@@ -2,6 +2,7 @@ import ReactPaginate from "react-paginate";
 import { getMovies } from "../rtx/Slices/MoviesSlice";
 import { useDispatch } from "react-redux";
 import "./Pagination.css";
+import "../App.css";
 
 function PaginationComponent() {
   const dispatch = useDispatch();
