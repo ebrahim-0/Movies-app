@@ -22,16 +22,26 @@ export const search = createAsyncThunk("moviesSlice/search", async (word) => {
   return data.results;
 });
 
+const initialState = { movies: [], loading: false };
+
 const moviesSlice = createSlice({
-  initialState: [],
+  initialState,
   name: "moviesSlice",
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getMovies.fulfilled, (state, action) => {
-      return action.payload;
+    builder.addCase(getMovies.fulfilled, (state, actions) => {
+      void (state.movies = actions.payload);
+      state.loading = false;
     });
-    builder.addCase(search.fulfilled, (state, action) => {
-      return action.payload;
+    builder.addCase(getMovies.pending, (state, actions) => {
+      state.loading = true;
+    });
+    builder.addCase(search.fulfilled, (state, actions) => {
+      void (state.movies = actions.payload);
+      state.loading = false;
+    });
+    builder.addCase(search.pending, (state, actions) => {
+      state.loading = true;
     });
   },
 });

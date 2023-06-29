@@ -1,11 +1,12 @@
-import { Alert, Button, Col } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../rtx/Slices/MoviesSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Loading.css";
 
 function CardMove() {
-  const movies = useSelector((state) => state.movies);
+  const { movies, loading } = useSelector((state) => state.movies);
 
   const dispatch = useDispatch();
 
@@ -15,12 +16,25 @@ function CardMove() {
     dispatch(getMovies(1));
   }, []);
 
+  console.log(movies.results);
+
+  console.log(loading);
+
   return (
     <>
-      {movies.length > 1 ? (
+      {loading ? (
+        <div className="d-flex justify-content-center">
+          <div className="loading m-5">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      ) : (
         movies.map((movie) => {
           return (
-            <Col className="mt-3" key={movie.id}>
+            <Col className="mt-3 " key={movie.id}>
               <div className="card" style={{ margin: "20px" }}>
                 <img
                   style={{ height: "350px", padding: "5px" }}
@@ -45,10 +59,6 @@ function CardMove() {
             </Col>
           );
         })
-      ) : (
-        <Alert variant="danger" className="mt-5 ">
-          There is no Movies
-        </Alert>
       )}
     </>
   );

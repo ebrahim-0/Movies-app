@@ -29,24 +29,20 @@ function NavBar() {
           <Navbar.Brand href="/" className="text-light me-5">
             <img
               src={icon}
-              className=" align-bottom me-3"
+              className=" align-bottom"
               width={40}
               alt="React Bootstrap logo"
             />
             Movies
           </Navbar.Brand>
-
-          <Navbar.Toggle aria-controls="navbarScroll" className="bg-light" />
-          <Navbar.Collapse id="navbarScroll" className="text-light">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="m-auto me-2 mt-2 w-50"
-              aria-label="Search"
-              ref={value}
-              onChange={handleSearch}
-            />
-          </Navbar.Collapse>
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="m-auto me-2 mt-2 w-50"
+            aria-label="Search"
+            ref={value}
+            onChange={handleSearch}
+          />
         </Container>
       </Navbar>
     </>
